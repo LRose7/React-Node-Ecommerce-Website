@@ -1,0 +1,19 @@
+{
+  "name": "react-node-ecommerce-website",
+  "version": "1.0.0",
+  "description": "Full Stack Ecommerce Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LRose7/React-Node-Ecommerce-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LRose7/React-Node-Ecommerce-Website/issues"
+  },
+  "homepage": "https://github.com/LRose7/React-Node-Ecommerce-Website#readme"
+}
