@@ -91,47 +91,6 @@ body {
   color: var(--clr-light-accent);
 }
 
-/* HAMBURGER */
-.sidebar-toggle {
-  padding: .25em;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  position: absolute;
-  /* left: 1em;
-  top: 1em; */
-  z-index: 1000;
-  color: black;
-}
-
-.hamburger {
-  display: block;
-  position: relative;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  background: var(--clr-accent);
-  width: 2em;
-  height: 3px;
-  border-radius: 1em;
-  transition: transform 250ms ease-in-out;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px; }
-
-/* END HAMBURGER */
-
 /* SHOPPING CART ICON SIZE */
 .nav-icon {
   font-size: 1.5rem;
@@ -283,7 +242,7 @@ body {
 
 /*------------ SIDE BAR -----------------*/
 .brand button {
-  font-size: 2rem;
+  font-size: 1.9rem;
   padding: 0.5rem;
   background: none;
   border: none;
