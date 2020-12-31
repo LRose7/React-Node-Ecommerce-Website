@@ -3,12 +3,12 @@ import './App.css';
 
 function App() {
 
-  // const openMenu = () => {
-  //   document.getElementsByClassName('.sidebar').classList.add('.open');
-  // }
-  // const closeMenu = () => {
-  //   document.getElementsByClassName('.sidebar').classList.remove('.open');
-  // }
+  const openMenu = () => {
+    document.querySelector('.sidebar').classList.add('open');
+  }
+  const closeMenu = () => {
+    document.querySelector('.sidebar').classList.remove('open');
+  }
 
 
   return (
@@ -17,7 +17,7 @@ function App() {
        <nav className="navbar">
            <div className="navbar-center">
                <div className="brand">
-                   <button >&#9776;</button>
+                   <button onClick={openMenu}>&#9776;</button>
                </div>
                <div className="logo-title">
                    <h1><img className="logo-img" src="./images/JALogo2.PNG" alt="logo" />
@@ -36,7 +36,7 @@ function App() {
            </div>
        </nav>
        <aside className="sidebar">
-           <button className="sidebar-close-button">
+           <button className="sidebar-close-button" onClick={closeMenu}>
              x
            </button>
            <div className="sidebar-title">
