@@ -32,6 +32,10 @@ body {
   margin: 0;
 }
 
+#root {
+  height: 100%;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -118,7 +122,6 @@ body {
 
 .logo-title {
   font-family: var(--ff-primary);
-  color: var(--clr-accent);
   font-size: 45px;
   align-items: center;
 }

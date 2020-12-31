@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import './App.css';
-import data from './data';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
 
@@ -13,7 +15,7 @@ function App() {
 
 
   return (
-
+    <BrowserRouter>
     <div className="grid-container">
        <nav className="navbar">
            <div className="navbar-center">
@@ -22,7 +24,9 @@ function App() {
                </div>
                <div className="logo-title">
                    <h1><img className="logo-img" src="./images/JALogo2.PNG" alt="logo" />
-                      Fine Desks</h1>
+                     <NavLink
+                     to='/'
+                     activeStyle={{color: 'teal'}}> Fine Desks</NavLink></h1>
                </div>
                <div className="nav-links">
                    <a href="signin.html" className="nav-link">Signin</a>
@@ -60,45 +64,14 @@ function App() {
            </ul>
        </aside>
        <main className="main">
-           <header className="hero">
-               <div className="banner">
-                   <h1 className="banner-title">Fine Desks Collection</h1>
-                   <a href="#products" className="banner-btn">shop now</a>
-               </div>
-           </header>
-           <section id="products" className="products">
-               <div className="section-title">
-                   <h2>Our Products</h2>
-               </div>
-               <div className="products-center">
-                   <ul className="products-list">
-                       {
-                           data.products.map(product =>
-                            <li className="product">
-                            <div className="image-container">
-                                <img
-                                src={product.image}
-                                alt="product1"
-                                className="product-image"
-                                />
-                            </div>
-                            <div className="product-name">
-                                <a href="product.html"> {product.name}</a>
-                            </div>
-                            <div className="product-type">{product.type}</div>
-                            <div className="product-price">${product.price}</div>
-                            <div className="product-rating">{product.rating} Stars ({product.numReviews})</div>
-                        </li>
-                            )
-                       }
-                   </ul>
-               </div>
-           </section>
-       </main>
+                <Route path="/" exact="true" component={ HomeScreen }></Route>
+                <Route path="/product/:id" component={ ProductScreen }></Route>
+        </main>
        <footer className="footer">
-           <p>&copy; 2020 All Rights Reserved.</p>
+           <p>&copy; 2020 Fine Desks All Rights Reserved.</p>
        </footer>
    </div>
+   </BrowserRouter>
   );
 }
 
