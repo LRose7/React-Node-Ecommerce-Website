@@ -2,9 +2,10 @@
   "name": "react-node-ecommerce-website",
   "version": "1.0.0",
   "description": "Full Stack Ecommerce Website",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch backend --exec babel-node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/LRose7/React-Node-Ecommerce-Website/issues"
   },
-  "homepage": "https://github.com/LRose7/React-Node-Ecommerce-Website#readme"
+  "homepage": "https://github.com/LRose7/React-Node-Ecommerce-Website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.6"
+  }
 }
