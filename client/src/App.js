@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import data from './data';
 
 function App() {
 
@@ -71,90 +72,25 @@ function App() {
                </div>
                <div className="products-center">
                    <ul className="products-list">
-                       <li className="product">
-                           <div className="image-container">
-                               <img
-                               src="/images/wooddesk1.jpg"
-                               alt="product1"
-                               className="product-image"
-                               />
-                           </div>
-                           <div className="product-name">
-                               <a href="product.html"> Wood Desk 1</a>
-                           </div>
-                           <div className="product-price">$700</div>
-                           <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                       </li>
-                       <li className="product">
-                           <div className="image-container">
-                               <img
-                               src="/images/wooddesk2.jpg"
-                               alt="product1"
-                               className="product-image"
-                               />
-                           </div>
-                           <div className="product-name">
-                               <a href="product.html"> Wood Desk 2</a>
-                           </div>
-                           <div className="product-price">$500</div>
-                           <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                       </li>
-                       <li className="product">
-                           <div className="image-container">
-                               <img
-                               src="/images/wooddesk3.jpg"
-                               alt="product1"
-                               className="product-image"
-                               />
-                           </div>
-                           <div className="product-name">
-                               <a href="product.html"> Wood Desk 3</a>
-                           </div>
-                           <div className="product-price">$900</div>
-                           <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                       </li>
-                       <li className="product">
-                           <div className="image-container">
-                               <img
-                               src="/images/wooddesk4.jpg"
-                               alt="product1"
-                               className="product-image"
-                               />
-                           </div>
-                           <div className="product-name">
-                               <a href="product.html"> Wood Desk 4</a>
-                           </div>
-                           <div className="product-price">$750</div>
-                           <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                       </li>
-                       <li className="product">
-                           <div className="image-container">
-                               <img
-                               src="/images/cornerdesk.jpg"
-                               alt="product1"
-                               className="product-image"
-                               />
-                           </div>
-                           <div className="product-name">
-                               <a href="product.html"> Corner Desk</a>
-                           </div>
-                           <div className="product-price">$1050</div>
-                           <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                       </li>
-                       <li className="product">
-                           <div className="image-container">
-                               <img
-                               src="/images/u-shaped-desk.jpg"
-                               alt="product1"
-                               className="product-image"
-                               />
-                           </div>
-                           <div className="product-name">
-                               <a href="product.html"> U-Shaped Desk </a>
-                           </div>
-                           <div className="product-price">$2050</div>
-                           <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                       </li>
+                       {
+                           data.products.map(product =>
+                            <li className="product">
+                            <div className="image-container">
+                                <img
+                                src={product.image}
+                                alt="product1"
+                                className="product-image"
+                                />
+                            </div>
+                            <div className="product-name">
+                                <a href="product.html"> {product.name}</a>
+                            </div>
+                            <div className="product-type">{product.type}</div>
+                            <div className="product-price">${product.price}</div>
+                            <div className="product-rating">{product.rating} Stars ({product.numReviews})</div>
+                        </li>
+                            )
+                       }
                    </ul>
                </div>
            </section>

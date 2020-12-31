@@ -226,6 +226,12 @@ body {
   color: var(--clr-accent);
 }
 
+.product-type {
+  font-size: 1.0rem;
+  font-weight: bold;
+  margin-top:0.7rem;
+}
+
 .product-price {
   font-size: 1.7rem;
   font-weight: bold;
