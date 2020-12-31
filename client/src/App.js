@@ -29,7 +29,7 @@ function App() {
                      activeStyle={{color: 'teal'}}> Fine Desks</NavLink></h1>
                </div>
                <div className="nav-links">
-                   <a href="signin.html" className="nav-link">Signin</a>
+                   <a href="signin.html" className="nav-link">Sign in</a>
                    <div className="cart-btn">
                        <span className="nav-icon">
                            <a href="index.html"><i className="fas
@@ -64,8 +64,8 @@ function App() {
            </ul>
        </aside>
        <main className="main">
-                <Route path="/" exact="true" component={ HomeScreen }></Route>
-                <Route path="/product/:id" component={ ProductScreen }></Route>
+                <Route path="/" exact="true" component={HomeScreen}></Route>
+                <Route path="/product/:id" component={ProductScreen}></Route>
         </main>
        <footer className="footer">
            <p>&copy; 2020 Fine Desks All Rights Reserved.</p>
