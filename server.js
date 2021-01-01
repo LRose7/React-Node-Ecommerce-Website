@@ -3,10 +3,19 @@
 // npm i @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev
 import express from 'express';
 import data from './data';
+import cors from 'cors';
 
 const PORT = process.env.PORT || 5000;
 
 const app = express();
+
+//middleware
+app.use(cors());
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    next();
+});
 
 app.get('/api/products', (req, res) => {
     res.send(data.products);

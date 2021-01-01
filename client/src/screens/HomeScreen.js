@@ -1,9 +1,24 @@
-import React from 'react';
-import data from '../data';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 
 function HomeScreen (props) {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data } = await axios.get("http://localhost:5000/api/products/");
+            setProducts(data);
+        }
+        fetchData();
+        return () => {
+            //
+        };
+    }, [])
+
+
     return   <section id="products" className="products"><header className="hero">
         <div className="banner">
             <h1 className="banner-title">Fine Desks Collection</h1>
@@ -16,8 +31,8 @@ function HomeScreen (props) {
         </div>
         <ul className="products-list">
         {
-            data.products.map(product =>
-            <li className="product">
+            products.map(product =>
+            <li className="product" key={product._id}>
             <div className="image-container">
             <NavLink to={"/product/" + product._id}> <img
                 src={product.image}
