@@ -8,7 +8,7 @@ const data = {
         type: 'Writing Desk',
         rating: 4.5,
         numReviews: 10,
-        countInStock: 3
+        countInStock: 0
     },
     {
         _id: 2,
