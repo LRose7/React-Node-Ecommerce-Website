@@ -7,7 +7,8 @@ const data = {
         price: 700,
         type: 'Writing Desk',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 3
     },
     {
         _id: 2,
@@ -16,7 +17,8 @@ const data = {
         price: 600,
         type: 'Writing Desk',
         rating: 4.3,
-        numReviews: 7
+        numReviews: 7,
+        countInStock: 3
     },
     {
         _id: 3,
@@ -25,7 +27,8 @@ const data = {
         price: 800,
         type: 'Writing Desk',
         rating: 4.8,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 3
     },
     {
         _id: 4,
@@ -34,7 +37,8 @@ const data = {
         price: 1000,
         type: 'Writing Desk',
         rating: 4.9,
-        numReviews: 14
+        numReviews: 14,
+        countInStock: 3
     },
     {
         _id: 5,
@@ -43,7 +47,8 @@ const data = {
         price: 700,
         type: 'Corner Desk',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6
     },
     {
         _id: 6,
@@ -52,7 +57,8 @@ const data = {
         price: 2050,
         type: 'U-Shaped Desk',
         rating: 4.0,
-        numReviews: 5
+        numReviews: 5,
+        countInStock: 1
     },
     {
         _id: 7,
@@ -61,7 +67,8 @@ const data = {
         price: 3050,
         type: 'Antique Desk',
         rating: 4.7,
-        numReviews: 3
+        numReviews: 3,
+        countInStock: 2
     },
     {
         _id: 8,
@@ -70,7 +77,8 @@ const data = {
         price: 4050,
         type: 'Executive Desk',
         rating: 4.9,
-        numReviews: 5
+        numReviews: 5,
+        countInStock: 5
     },
     {
         _id: 9,
@@ -79,7 +87,8 @@ const data = {
         price: 2050,
         type: 'U-Shaped Desk',
         rating: 4.0,
-        numReviews: 5
+        numReviews: 5,
+        countInStock: 4
     }
 ]
 }
