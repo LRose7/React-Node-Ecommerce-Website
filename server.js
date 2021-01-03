@@ -17,16 +17,22 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/api/products/:id/', (req, res) => {
-    const productId = req.params.id;
-    const product = data.products.find(x => x._id === productId);
-    if(product)
-        res.send(product);
-    else
-        res.status(404).send({msg: "Product Not Found." })
+app.get('/api/products/:id', async (req, res) => {
+    let productId = parseInt(req.params.id);
+    try {
+        const product = await data.products.find(x => x._id === productId);
+        if(product)
+            res.send(product);
+        else
+            res.status(404).send({msg: "Product Not Found."})
+
+    } catch (error) {
+        res.send(error);
+
+    }
 });
 
-app.get('/api/products/', (req, res) => {
+app.get('/api/products', (req, res) => {
     res.send(data.products);
 });
 

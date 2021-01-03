@@ -258,6 +258,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .details-image {
@@ -274,7 +275,7 @@ body {
 }
 
 .details-action {
-  flex: 1 1 30rem;
+  flex: 1 1 50rem;
 }
 
 .details-info ul, .details-action ul {

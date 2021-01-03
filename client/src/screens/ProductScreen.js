@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { detailsProduct } from '../actions/productActions';
 
-function ProductScreen (props) {
+function ProductScreen(props) {
 
-    const productDetails = useSelector(state => state.productDetails);
+    const productDetails = useSelector((state) => state.productDetails);
     const { product, loading, error } = productDetails;
     const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ function ProductScreen (props) {
         return () => {
             //
         };
-    }, [])
+    }, [dispatch, props.match.params.id])
 
     return  <div>
         <div className="back-to-results">
@@ -24,11 +24,11 @@ function ProductScreen (props) {
         {loading? <div>Loading...</div>:
         error? <div>{error}</div>:
         (
-            <div className="details" >
+            <div className="details" key={product._id}>
             <div className="details-image">
                 <img src={product.image} alt="product"></img>
             </div>
-            <div className="details.info">
+            <div className="details-info">
                 <ul>
                     <li key={product._id}>
                         <h4>{product.name}</h4>
