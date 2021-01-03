@@ -3,6 +3,7 @@ import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import CartScreen from "./screens/CartScreen";
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
        <main className="main">
                 <Route path="/" exact="true" component={HomeScreen}></Route>
                 <Route path="/product/:id" component={ProductScreen}></Route>
+                <Route path="/cart/:id?" component={CartScreen}></Route>
         </main>
        <footer className="footer">
            <p>&copy; 2020 Fine Desks All Rights Reserved.</p>
