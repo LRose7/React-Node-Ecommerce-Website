@@ -32,7 +32,9 @@ body {
   margin: 0;
 }
 
-
+.full-width {
+  width: 100%;
+}
 
 #root {
   height: 100%;
@@ -303,26 +305,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-.button-primary {
-  font-size: 1.3rem;
-  padding: 1rem;
-  border: .1rem var(--clr-dark) solid;
-  border-radius: .5rem;
-  cursor: pointer;
-  color: var(--clr-light);
-  background-color: var(--clr-accent);
-}
-
-.full-width {
-  width: 100%;
-}
-
-.button:hover {
-  border: .1rem var(--clr-accent) solid;
-  color: var(--clr-dark);
-  background-color: var(--clr-light-accent);
-}
 /*---- END OF PRODUCT DETAILS ----*/
 
 /*------------ SIDE BAR -----------------*/
@@ -387,7 +369,7 @@ body {
 
 .sidebar-close-button {
   border-radius: 20%;
-  border: 0.1rem #000000 solid;
+  border: 0.1rem var(--clr-dark) solid;
   width: 1.5rem;
   height: 1.5rem;
   padding: 0.4rem;
@@ -418,7 +400,7 @@ body {
 
 .cart-action {
   flex: 1 1 20rem;
-  background-color: var(--clr-light-accent);
+  background-color: lightgray;
   border-radius: 0.5rem;
   padding: 1rem;
 }
@@ -465,12 +447,77 @@ body {
   text-align: right;
 }
 
+/* FORMS */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  padding: 2rem;
+  border: .1rem var(--clr-light-accent) solid;
+  border-radius: 0.5rem;
+}
+
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+input {
+  padding: 1rem;
+  border: .1rem var(--clr-light-accent) solid;
+  border-radius: 0.5rem;
+  background-color: lightgray;
+}
+
+.button {
+  padding: 1rem;
+  border: .1rem var(--clr-dark) solid;
+  border-radius: .5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.button.primary {
+  color: var(--clr-light);
+  background-color: var(--clr-accent);
+}
+
+.button.secondary {
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+}
+
+.button.primary:hover {
+  border: .1rem var(--clr-accent) solid;
+  color: var(--clr-dark);
+  background-color: var(--clr-light-accent);
+}
+
+.button.secondary:hover {
+  color: var(--clr-accent);
+}
+
+
+
+.text-center {
+  text-align: center;
+}
+
 /*--------- FOOTER ------------*/
 
 .footer {
   grid-area: footer;
-  background-color: black;
-  color: white;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
   display: flex;
   justify-content: center;
   align-items: center;

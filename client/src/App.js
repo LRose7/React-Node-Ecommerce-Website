@@ -4,6 +4,7 @@ import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from "./screens/CartScreen";
+import SigninScreen from './screens/SigninScreen';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
                      activeStyle={{color: 'teal'}}> Fine Desks</NavLink></h1>
                </div>
                <div className="nav-links">
-                   <a href="signin.html" className="nav-link">Sign in</a>
+                   <NavLink to="/signin" className="nav-link">Sign in</NavLink>
                    <div className="cart-btn">
                        <span className="nav-icon">
                            <a href="index.html"><i className="fas
@@ -66,6 +67,7 @@ function App() {
        </aside>
        <main className="main">
                 <Route path="/" exact="true" component={HomeScreen}></Route>
+                <Route path="/signin" component={SigninScreen}></Route>
                 <Route path="/product/:id" component={ProductScreen}></Route>
                 <Route path="/cart/:id?" component={CartScreen}></Route>
         </main>
