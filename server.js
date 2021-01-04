@@ -3,10 +3,22 @@
 // npm i @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev
 import express from 'express';
 import data from './data';
+import dotenv from 'dotenv';
+import config from './config';
+import mongoose from 'mongoose';
+import userRoute from './routes/userRoute';
 import cors from 'cors';
 
-const PORT = process.env.PORT || 5000;
+dotenv.config();
 
+const mongodbUrl = config.MONGODB_URL;
+mongoose.connect(mongodbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+}).catch(error => console.log(error.reason));
+
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 //middleware
@@ -16,6 +28,8 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
     next();
 });
+
+app.use("/api/users", userRoute);
 
 app.get('/api/products/:id', async (req, res) => {
     let productId = parseInt(req.params.id);
