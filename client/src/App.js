@@ -1,12 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import './App.css';
+import { useSelector } from 'react-redux';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from './screens/SigninScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProductsScreen from './screens/ProductsScreen';
 
 function App() {
+
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignin;
 
   const openMenu = () => {
     document.querySelector('.sidebar').classList.add('open');
@@ -31,10 +37,21 @@ function App() {
                      activeStyle={{color: 'teal'}}> Fine Desks</NavLink></h1>
                </div>
                <div className="nav-links">
-                   <NavLink to="/signin" className="nav-link">Sign in</NavLink>
+                   {
+
+                       userInfo ?
+                       <ul className="userinfo-nav">
+                           <li><NavLink to="/profile" className="nav-link">{ userInfo.name }</NavLink></li>
+                           <li><button className="logout-btn">Logout</button></li>
+                       </ul>
+                        :
+                       <NavLink to="/signin" className="nav-link">Sign in</NavLink>
+
+                   }
+
                    <div className="cart-btn">
                        <span className="nav-icon">
-                           <a href="index.html"><i className="fas
+                           <a href="cart.html"><i className="fas
                                    fa-shopping-cart"></i></a>
                        </span>
                        <div className="cart-items">0</div>
@@ -67,7 +84,9 @@ function App() {
        </aside>
        <main className="main">
                 <Route path="/" exact="true" component={HomeScreen}></Route>
+                <Route path="/products" component={ProductsScreen}></Route>
                 <Route path="/signin" component={SigninScreen}></Route>
+                <Route path="/register" component={RegisterScreen}></Route>
                 <Route path="/product/:id" component={ProductScreen}></Route>
                 <Route path="/cart/:id?" component={CartScreen}></Route>
         </main>

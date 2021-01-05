@@ -9,7 +9,7 @@ function CartScreen(props) {
     const { cartItems } = cart;
 
     const productId = props.match.params.id;
-    const qty = props.location.search? Number(props.location.search.split("=")[1]):1;
+    const qty = props.location.search? Number(props.location.search.split("=")[1]) : 1;
     const dispatch = useDispatch();
     const removeFromCartHandler = (productId) => {
         dispatch(removeFromCart(productId));
@@ -59,7 +59,7 @@ function CartScreen(props) {
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select>
-                                <button type="button" className="button" onClick={() => removeFromCartHandler(item.product)}>
+                                <button type="button" onClick={() => removeFromCartHandler(item.product)}>
                                     Delete
                                 </button>
                             </div>

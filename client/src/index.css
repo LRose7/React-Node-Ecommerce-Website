@@ -92,6 +92,11 @@ body {
   color: var(--clr-light-accent);
 }
 
+.userinfo-nav {
+  display: flex;
+  margin-right: 20px;
+}
+
 .fa-shopping-cart {
   color: teal;
 }
@@ -506,6 +511,19 @@ input {
   color: var(--clr-accent);
 }
 
+.logout-btn {
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+  padding: 0.25rem ;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.logout-btn:hover {
+  background-color: var(--clr-light-accent);
+}
+  X
 
 
 .text-center {
