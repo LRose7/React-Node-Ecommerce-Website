@@ -2,7 +2,6 @@
 // To convert from ES6 to ES5 use Babel
 // npm i @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev
 import express from 'express';
-import data from './data';
 import dotenv from 'dotenv';
 import config from './config';
 import mongoose from 'mongoose';
