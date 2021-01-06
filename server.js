@@ -8,6 +8,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute';
 import productRoute from './routes/productRoute';
+import uploadRoute from './routes/uploadRoute';
 import cors from 'cors';
 
 dotenv.config();
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 });
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
+app.use("/api/uploads", uploadRoute);
 
 // app.get('/api/products/:id', async (req, res) => {
 //     let productId = parseInt(req.params.id);
